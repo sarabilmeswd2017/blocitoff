@@ -918,3 +918,110 @@ Processing by Devise::SessionsController#new as HTML
   Rendered devise/shared/_links.html.erb (27.6ms)
   Rendered devise/sessions/new.html.erb within layouts/application (54.8ms)
 Completed 200 OK in 151ms (Views: 149.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-09-10 08:54:44 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 847ms (Views: 822.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2017-09-10 08:54:45 +0300
+
+
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for ::1 at 2017-09-10 08:54:45 +0300
+
+
+Started GET "/users/sign_up" for ::1 at 2017-09-10 08:54:57 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (11.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (71.9ms)
+Completed 200 OK in 141ms (Views: 115.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for ::1 at 2017-09-10 08:55:09 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yLM+ZHIY+Jne/FNiUSPr3kQ4xAnjp2OdCHYPRnPuFFqev8b3Fm1kKIjnEuMzr5WhHQvAjkcMXw2fRpQ6qGkUqQ==", "user"=>{"email"=>"saraesrig@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'saraesrig@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered devise/shared/_links.html.erb (7.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 288ms (Views: 55.1ms | ActiveRecord: 0.8ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "saraesrig@gmail.com"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "saraesrig@gmail.com"]]
+  [1m[36mSQL (2.5ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+
+
+Started GET "/users/sign_up" for ::1 at 2017-09-10 08:55:54 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (11.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-09-10 08:56:02 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qIohMNDaiDIrcLf16Rqc0VWd1c4Fy/7lep55Xc7jQ7n+htmjtK8Ug31r9nSLluKuDK7RSaFgwnXtruIhFWRDSg==", "user"=>{"email"=>"saraesrig@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'saraesrig@gmail.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "confirmation_token", "confirmation_sent_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "saraesrig@gmail.com"], ["encrypted_password", "$2a$11$1ya1ulrXIG1BU0cZvioQvek2Knwd2Wi42/LNO0gIacatt7rg1THcW"], ["created_at", "2017-09-10 05:56:02.609288"], ["updated_at", "2017-09-10 05:56:02.609288"], ["confirmation_token", "K6VV6hKGjmxG9s_yzkxt"], ["confirmation_sent_at", "2017-09-10 05:56:02.609939"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  Rendered devise/mailer/confirmation_instructions.html.erb (6.4ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 297.0ms
+
+Sent mail to saraesrig@gmail.com (1994.5ms)
+Date: Sun, 10 Sep 2017 08:56:02 +0300
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: saraesrig@gmail.com
+Message-ID: <59b4d3f2e5336_8d13fec6ca1869487689@Saras-MBP.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome saraesrig@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=K6VV6hKGjmxG9s_yzkxt">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 2475ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2017-09-10 08:56:04 +0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 34.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=K6VV6hKGjmxG9s_yzkxt" for ::1 at 2017-09-10 09:08:40 +0300
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"K6VV6hKGjmxG9s_yzkxt"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["confirmation_token", "K6VV6hKGjmxG9s_yzkxt"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmed_at", "2017-09-10 06:08:40.212483"], ["updated_at", "2017-09-10 06:08:40.213871"], ["id", 5]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 29ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-09-10 09:08:40 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (9.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 64ms (Views: 62.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-cde094789b3667e2ab72c31e93e6ba9f95b7445a1f8fab2b08acb0f1d3b516dd.css?body=1" for ::1 at 2017-09-10 09:08:40 +0300
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2017-09-10 09:08:40 +0300
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2017-09-10 09:08:40 +0300

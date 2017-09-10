@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Blocitoff</title>
+  <meta name="viewpoint" content="width=devise-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -18,7 +19,7 @@ Signed in as: <strong><%= current_user.email %></strong> |
   <% if flash[:notice] %>
   <div class="alert alert-sucess">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <%= flash[:notive] %>
+    <%= flash[:notice] %>
   </div>
 
   <% elsif flash[:alert] %>
