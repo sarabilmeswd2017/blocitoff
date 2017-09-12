@@ -1,4 +1,8 @@
 class ItemsController < ApplicationController
+  def index
+    @items = current_user.items
+  end
+
   def new
     @item = Item.new
   end
@@ -7,7 +11,7 @@ class ItemsController < ApplicationController
     @item = current_user.items.new(item_params)
     if @item.save
       flash[:notice] = "Wiki was saved."
-        redirect_to [@item]
+        redirect_to items_path
     else
       flash[:alert] = "There was an error saving your item."
         render :new
