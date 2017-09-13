@@ -1758,3 +1758,566 @@ Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6
 
 
 Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-09-13 22:26:28 +0300
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE  INDEX "index_items_on_user_id" ON "items" ("user_id")[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170911074412')
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170907081811')[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  CREATE  INDEX "index_items_on_user_id" ON "items" ("user_id")
+  [1m[36m (0.8ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170911074412')[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170907081811')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE  INDEX "index_items_on_user_id" ON "items" ("user_id")[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170911074412')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170907081811')[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  CREATE  INDEX "index_items_on_user_id" ON "items" ("user_id")
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170911074412')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170907081811')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'joe@user.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "joe@user.com"], ["encrypted_password", "$2a$11$dIkse6goewTVLDS3MsvCkO8Kvs6RYVAkpr9e0jY5TqpSl1GZ.9Ez6"], ["confirmed_at", "2017-09-13 19:35:29.750393"], ["created_at", "2017-09-13 19:35:29.940083"], ["updated_at", "2017-09-13 19:35:29.940083"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kolby.heaney@block.net' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "kolby.heaney@block.net"], ["encrypted_password", "$2a$11$h4qOflVTOZnc7SHTVw0myO3V0u818zoIj7JTmTp.W8z7bcvubswEq"], ["confirmed_at", "2017-09-13 19:35:30.534856"], ["created_at", "2017-09-13 19:35:30.679009"], ["updated_at", "2017-09-13 19:35:30.679009"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'dylan_ernser@tromp.biz' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "dylan_ernser@tromp.biz"], ["encrypted_password", "$2a$11$bRbnfvvleNrR0qQ6ryTZVuhmY/mXEUlqJVP4koUSfKJtagxfR/HeO"], ["confirmed_at", "2017-09-13 19:35:30.681853"], ["created_at", "2017-09-13 19:35:30.821712"], ["updated_at", "2017-09-13 19:35:30.821712"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jadon.pollich@green.co' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "jadon.pollich@green.co"], ["encrypted_password", "$2a$11$Dnel08GKAgnR.Qc9vc/IXOdN3Nd/55Tv7yhCVTvlAGAszi6/O6v3u"], ["confirmed_at", "2017-09-13 19:35:30.824139"], ["created_at", "2017-09-13 19:35:30.962682"], ["updated_at", "2017-09-13 19:35:30.962682"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'hershel_hagenes@howesporer.biz' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "hershel_hagenes@howesporer.biz"], ["encrypted_password", "$2a$11$.Ko9NiyEuB2YeLC/voJK1.JNVeDvGVHgTfXYvqvPmkWtUi.c18vG2"], ["confirmed_at", "2017-09-13 19:35:30.965582"], ["created_at", "2017-09-13 19:35:31.104968"], ["updated_at", "2017-09-13 19:35:31.104968"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'shawna@smith.io' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "shawna@smith.io"], ["encrypted_password", "$2a$11$yF5Nc/FhVzR2k7GentQeNe4dp2rjvTkhni00LaoJYcWkd3F6n.wH2"], ["confirmed_at", "2017-09-13 19:35:31.107661"], ["created_at", "2017-09-13 19:35:31.246152"], ["updated_at", "2017-09-13 19:35:31.246152"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'eva@lindcain.co' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "eva@lindcain.co"], ["encrypted_password", "$2a$11$YpeTcoD9L9we2l3n2bZWL.f95cpPcsaQLFhKK.taP6Ud6X9PNBUZO"], ["confirmed_at", "2017-09-13 19:35:31.248496"], ["created_at", "2017-09-13 19:35:31.386064"], ["updated_at", "2017-09-13 19:35:31.386064"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'floy@langworth.biz' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "floy@langworth.biz"], ["encrypted_password", "$2a$11$ytIuoIs.D47QbTl4Kz3cZuyN9sCtwv26da1sUJRFje6wZykzAabvy"], ["confirmed_at", "2017-09-13 19:35:31.388863"], ["created_at", "2017-09-13 19:35:31.527334"], ["updated_at", "2017-09-13 19:35:31.527334"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'aniyah.heidenreich@windler.name' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "aniyah.heidenreich@windler.name"], ["encrypted_password", "$2a$11$cOFeeu2CRlTK8cAjJkjwRensEECF1VrmKE66iobQ4nO07uN8M2j5m"], ["confirmed_at", "2017-09-13 19:35:31.530266"], ["created_at", "2017-09-13 19:35:31.670647"], ["updated_at", "2017-09-13 19:35:31.670647"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'dayna.feil@bradtke.co' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "dayna.feil@bradtke.co"], ["encrypted_password", "$2a$11$W5aWbSb6MJgDFMazhqRTUOW5YELxJbToGERo1FSpvgiE.Sxl4KfRy"], ["confirmed_at", "2017-09-13 19:35:31.673665"], ["created_at", "2017-09-13 19:35:31.814010"], ["updated_at", "2017-09-13 19:35:31.814010"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'claud.watsica@rodriguez.net' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "claud.watsica@rodriguez.net"], ["encrypted_password", "$2a$11$ABm02Z6j66nVbpNJQotQROPSuePPn/0L5jkM12YAaR0p2cLRUSijW"], ["confirmed_at", "2017-09-13 19:35:31.816944"], ["created_at", "2017-09-13 19:35:31.957898"], ["updated_at", "2017-09-13 19:35:31.957898"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'dolores@hartmannbailey.io' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "dolores@hartmannbailey.io"], ["encrypted_password", "$2a$11$I53t3oLbE3EjMD3b/7nVouSsUBNxwvRgV0EE7aNcn1da5mtsNQEbG"], ["confirmed_at", "2017-09-13 19:35:31.960136"], ["created_at", "2017-09-13 19:35:32.099740"], ["updated_at", "2017-09-13 19:35:32.099740"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jacynthe@dare.info' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "jacynthe@dare.info"], ["encrypted_password", "$2a$11$SclAnMkgmAAiB/44Um0kmuAN235IWVxdZbVi9XUUDLrAJO./dpJYO"], ["confirmed_at", "2017-09-13 19:35:32.103143"], ["created_at", "2017-09-13 19:35:32.242355"], ["updated_at", "2017-09-13 19:35:32.242355"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'laury_white@daniel.info' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "laury_white@daniel.info"], ["encrypted_password", "$2a$11$6WR8HcLRGqtwCgWXO2nUeeXPSIKhErFJJ8GipRdIQPWYg2u8bBLy."], ["confirmed_at", "2017-09-13 19:35:32.245697"], ["created_at", "2017-09-13 19:35:32.383217"], ["updated_at", "2017-09-13 19:35:32.383217"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'miouri_dicki@schumm.io' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "miouri_dicki@schumm.io"], ["encrypted_password", "$2a$11$no07Y7YCu79UzY2T1zxgNeFu7MqrI6Rin4vUAlOB1sknauGVCBrla"], ["confirmed_at", "2017-09-13 19:35:32.385879"], ["created_at", "2017-09-13 19:35:32.524697"], ["updated_at", "2017-09-13 19:35:32.524697"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'walter.nienow@rempel.io' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "walter.nienow@rempel.io"], ["encrypted_password", "$2a$11$2NmJaQPx487/.i6cKVoIFuZ1E74ztoCarPi5/prDbltJUB26PZ22m"], ["confirmed_at", "2017-09-13 19:35:32.527374"], ["created_at", "2017-09-13 19:35:32.665206"], ["updated_at", "2017-09-13 19:35:32.665206"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Voluptatem beatae id doloribus assumenda voluptatum consequatur soluta eligendi."], ["user_id", 5], ["created_at", "2017-09-13 19:35:32.682120"], ["updated_at", "2017-09-13 19:35:32.682120"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Aliquam et dolorum expedita reiciendis sunt libero."], ["user_id", 12], ["created_at", "2017-09-13 19:35:32.686175"], ["updated_at", "2017-09-13 19:35:32.686175"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Maxime delectus alias necessitatibus iusto recusandae enim hic voluptas."], ["user_id", 15], ["created_at", "2017-09-13 19:35:32.689946"], ["updated_at", "2017-09-13 19:35:32.689946"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Qui impedit non vitae."], ["user_id", 5], ["created_at", "2017-09-13 19:35:32.692881"], ["updated_at", "2017-09-13 19:35:32.692881"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Nulla accusantium esse quisquam id dolor officia aut."], ["user_id", 7], ["created_at", "2017-09-13 19:35:32.696502"], ["updated_at", "2017-09-13 19:35:32.696502"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Accusamus modi laborum ut aut rerum sit."], ["user_id", 12], ["created_at", "2017-09-13 19:35:32.699019"], ["updated_at", "2017-09-13 19:35:32.699019"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Consequatur labore sit itaque qui recusandae qui laudantium."], ["user_id", 15], ["created_at", "2017-09-13 19:35:32.701526"], ["updated_at", "2017-09-13 19:35:32.701526"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Magnam velit numquam nostrum iure eligendi et error."], ["user_id", 2], ["created_at", "2017-09-13 19:35:32.703740"], ["updated_at", "2017-09-13 19:35:32.703740"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Ullam exercitationem earum eaque."], ["user_id", 11], ["created_at", "2017-09-13 19:35:32.706237"], ["updated_at", "2017-09-13 19:35:32.706237"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Blanditiis quasi velit doloremque dolor nihil ut suscipit."], ["user_id", 16], ["created_at", "2017-09-13 19:35:32.708535"], ["updated_at", "2017-09-13 19:35:32.708535"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "items"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE  INDEX "index_items_on_user_id" ON "items" ("user_id")[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (1.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170911074412')
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170907081811')[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  CREATE  INDEX "index_items_on_user_id" ON "items" ("user_id")
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "confirmation_token" varchar, "confirmed_at" datetime, "confirmation_sent_at" datetime, "unconfirmed_email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+[0m
+  [1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (1.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (2.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20170911074412')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20170907081811')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'joe@user.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "joe@user.com"], ["encrypted_password", "$2a$11$dEsPQv6gZ4cYh5dq9/zF/ONu9laQKnCfhgJpustfst6qfY1dFcQaq"], ["confirmed_at", "2017-09-13 19:36:47.513937"], ["created_at", "2017-09-13 19:36:47.699651"], ["updated_at", "2017-09-13 19:36:47.699651"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'aida@effertz.io' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "aida@effertz.io"], ["encrypted_password", "$2a$11$jU3Ynd9fjfX57gQ8LPAQx.BxDvXY76R4m/PA83VbF5sQMw/8hmCjq"], ["confirmed_at", "2017-09-13 19:36:48.310658"], ["created_at", "2017-09-13 19:36:48.452906"], ["updated_at", "2017-09-13 19:36:48.452906"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'myrtice@feeney.io' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "myrtice@feeney.io"], ["encrypted_password", "$2a$11$wsyYzTzt7P/UQVzDVIzKFu.rM0hhdiBZYGJQCA9YzksNAk3vT57Q."], ["confirmed_at", "2017-09-13 19:36:48.455853"], ["created_at", "2017-09-13 19:36:48.599563"], ["updated_at", "2017-09-13 19:36:48.599563"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'annabel.flatley@lindgrengorczany.name' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "annabel.flatley@lindgrengorczany.name"], ["encrypted_password", "$2a$11$LC4bvFALRh6tMXtVT2Xk7ul.8D36dTwWF2bId8pkpFmnynMYblR46"], ["confirmed_at", "2017-09-13 19:36:48.602894"], ["created_at", "2017-09-13 19:36:48.751838"], ["updated_at", "2017-09-13 19:36:48.751838"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'marianna.effertz@altenwerth.co' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "marianna.effertz@altenwerth.co"], ["encrypted_password", "$2a$11$dpmIXO8JYQ2YblRmQdlFze5Ldv/OcLo7ZLODZEsGGuCijDed1Pmqe"], ["confirmed_at", "2017-09-13 19:36:48.754698"], ["created_at", "2017-09-13 19:36:48.897174"], ["updated_at", "2017-09-13 19:36:48.897174"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'juliet@streich.io' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "juliet@streich.io"], ["encrypted_password", "$2a$11$XZp7XePJRexvB6ruAoHerukbpM8lQjUeJ3kOwG8SK3oWLr950aEhq"], ["confirmed_at", "2017-09-13 19:36:48.899672"], ["created_at", "2017-09-13 19:36:49.038219"], ["updated_at", "2017-09-13 19:36:49.038219"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'theron@beahan.biz' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "theron@beahan.biz"], ["encrypted_password", "$2a$11$IbqYn5afWMhY/ksGYZepmu68cyyxyV3FLL0tFA6Xsu7tMVfGOIltW"], ["confirmed_at", "2017-09-13 19:36:49.040858"], ["created_at", "2017-09-13 19:36:49.182209"], ["updated_at", "2017-09-13 19:36:49.182209"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'carmine_anderson@ritchiecarroll.io' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "carmine_anderson@ritchiecarroll.io"], ["encrypted_password", "$2a$11$rObN.a13LoudMq4QG2qoVuNjvo7KPw7I2fnlbKIa5v5wT6JHe0p1K"], ["confirmed_at", "2017-09-13 19:36:49.185171"], ["created_at", "2017-09-13 19:36:49.322285"], ["updated_at", "2017-09-13 19:36:49.322285"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'gianni@goldner.co' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "gianni@goldner.co"], ["encrypted_password", "$2a$11$cA7SVG/9aAozUxC54P5cx.fP.a3Vyh7CFJXtgPpO78lqwkyi8GIXK"], ["confirmed_at", "2017-09-13 19:36:49.325132"], ["created_at", "2017-09-13 19:36:49.464481"], ["updated_at", "2017-09-13 19:36:49.464481"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jake.tillman@kuhlman.info' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "jake.tillman@kuhlman.info"], ["encrypted_password", "$2a$11$W2P789dsyD99FZkqFcmCju70fkz2Z8BxZw58jhFSSSJpbOZ29tVKe"], ["confirmed_at", "2017-09-13 19:36:49.467386"], ["created_at", "2017-09-13 19:36:49.605188"], ["updated_at", "2017-09-13 19:36:49.605188"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'dangelo@stamm.name' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "dangelo@stamm.name"], ["encrypted_password", "$2a$11$a/LR4kIj6xTCsNF2P4QELeCI6HG.ivHHlPdsiDeiBjSkSVrggSoy2"], ["confirmed_at", "2017-09-13 19:36:49.608184"], ["created_at", "2017-09-13 19:36:49.747137"], ["updated_at", "2017-09-13 19:36:49.747137"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'franz.watsica@corwinklein.biz' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "franz.watsica@corwinklein.biz"], ["encrypted_password", "$2a$11$JOQ4zRwqK8wjRfdwUFl5QOvfluldeGyFlmf5zXhKrdSMKIAiHoZqy"], ["confirmed_at", "2017-09-13 19:36:49.749355"], ["created_at", "2017-09-13 19:36:49.888921"], ["updated_at", "2017-09-13 19:36:49.888921"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'marcus_frami@jakubowski.org' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "marcus_frami@jakubowski.org"], ["encrypted_password", "$2a$11$UGzWUXo3FTGGxDc1aqVrNOCSGaGtIfYvZEoQqKVvX9yLpVjWAj73O"], ["confirmed_at", "2017-09-13 19:36:49.891589"], ["created_at", "2017-09-13 19:36:50.028728"], ["updated_at", "2017-09-13 19:36:50.028728"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'garret_becker@runtebarrows.info' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "garret_becker@runtebarrows.info"], ["encrypted_password", "$2a$11$JdJzEgKlItTMyPyZU8DBb.WgALP46ZroaHVSLn/13nLwRSMbb5fx6"], ["confirmed_at", "2017-09-13 19:36:50.031702"], ["created_at", "2017-09-13 19:36:50.169367"], ["updated_at", "2017-09-13 19:36:50.169367"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jany.pouros@moen.net' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "jany.pouros@moen.net"], ["encrypted_password", "$2a$11$rzrwWKGTXqC0KbuGVv2cguYxPpU1DGyDtTFrDbtODbZfvJbpdFZzy"], ["confirmed_at", "2017-09-13 19:36:50.172412"], ["created_at", "2017-09-13 19:36:50.314756"], ["updated_at", "2017-09-13 19:36:50.314756"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'keven_blanda@kris.biz' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmed_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["email", "keven_blanda@kris.biz"], ["encrypted_password", "$2a$11$pWCvrVBNhu2gJzhRfWCUKuNWCL7hgEbSmQTa299tveq..5mP43D9i"], ["confirmed_at", "2017-09-13 19:36:50.318797"], ["created_at", "2017-09-13 19:36:50.457767"], ["updated_at", "2017-09-13 19:36:50.457767"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Quis odit rerum in."], ["user_id", 1], ["created_at", "2017-09-13 19:36:50.473145"], ["updated_at", "2017-09-13 19:36:50.473145"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fugit consequuntur harum dolor saepe nostrum ea dolorem illum."], ["user_id", 4], ["created_at", "2017-09-13 19:36:50.476837"], ["updated_at", "2017-09-13 19:36:50.476837"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Tenetur nostrum velit non est quas."], ["user_id", 4], ["created_at", "2017-09-13 19:36:50.480396"], ["updated_at", "2017-09-13 19:36:50.480396"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sapiente ut sint maiores."], ["user_id", 8], ["created_at", "2017-09-13 19:36:50.482654"], ["updated_at", "2017-09-13 19:36:50.482654"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Eius est et asperiores quia quia earum debitis."], ["user_id", 15], ["created_at", "2017-09-13 19:36:50.485097"], ["updated_at", "2017-09-13 19:36:50.485097"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Nulla quae quos et fuga non corporis."], ["user_id", 5], ["created_at", "2017-09-13 19:36:50.487784"], ["updated_at", "2017-09-13 19:36:50.487784"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Cumque ea eum nesciunt beatae excepturi quam sunt."], ["user_id", 8], ["created_at", "2017-09-13 19:36:50.490032"], ["updated_at", "2017-09-13 19:36:50.490032"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Maxime ut voluptatum recusandae voluptatem similique molestias animi est."], ["user_id", 4], ["created_at", "2017-09-13 19:36:50.492672"], ["updated_at", "2017-09-13 19:36:50.492672"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Id doloremque aut omnis voluptatibus deleniti."], ["user_id", 13], ["created_at", "2017-09-13 19:36:50.495712"], ["updated_at", "2017-09-13 19:36:50.495712"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Eligendi cumque aut error eaque libero magni amet."], ["user_id", 8], ["created_at", "2017-09-13 19:36:50.498413"], ["updated_at", "2017-09-13 19:36:50.498413"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Porro repellat in natus minima nobis voluptatem nostrum."], ["user_id", 8], ["created_at", "2017-09-13 19:36:50.500746"], ["updated_at", "2017-09-13 19:36:50.500746"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Quam aut excepturi et."], ["user_id", 7], ["created_at", "2017-09-13 19:36:50.502894"], ["updated_at", "2017-09-13 19:36:50.502894"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Temporibus eligendi nemo voluptas inventore repellat aut impedit."], ["user_id", 11], ["created_at", "2017-09-13 19:36:50.505122"], ["updated_at", "2017-09-13 19:36:50.505122"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Omnis ab exercitationem harum incidunt eveniet."], ["user_id", 6], ["created_at", "2017-09-13 19:36:50.507287"], ["updated_at", "2017-09-13 19:36:50.507287"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Eos aut non id eum nobis."], ["user_id", 16], ["created_at", "2017-09-13 19:36:50.509897"], ["updated_at", "2017-09-13 19:36:50.509897"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Nisi voluptatem dolores earum."], ["user_id", 10], ["created_at", "2017-09-13 19:36:50.512931"], ["updated_at", "2017-09-13 19:36:50.512931"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Ex saepe dignissimos voluptatum qui assumenda et ullam."], ["user_id", 7], ["created_at", "2017-09-13 19:36:50.516081"], ["updated_at", "2017-09-13 19:36:50.516081"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ad expedita inventore est ratione."], ["user_id", 14], ["created_at", "2017-09-13 19:36:50.519242"], ["updated_at", "2017-09-13 19:36:50.519242"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Earum est maxime quasi voluptatem."], ["user_id", 3], ["created_at", "2017-09-13 19:36:50.522817"], ["updated_at", "2017-09-13 19:36:50.522817"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Minima dolor iure quidem blanditiis."], ["user_id", 10], ["created_at", "2017-09-13 19:36:50.526342"], ["updated_at", "2017-09-13 19:36:50.526342"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Non vel aut perferendis."], ["user_id", 9], ["created_at", "2017-09-13 19:36:50.529923"], ["updated_at", "2017-09-13 19:36:50.529923"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Non ipsa culpa sint."], ["user_id", 1], ["created_at", "2017-09-13 19:36:50.532808"], ["updated_at", "2017-09-13 19:36:50.532808"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Quaerat unde ad quia quos."], ["user_id", 7], ["created_at", "2017-09-13 19:36:50.535024"], ["updated_at", "2017-09-13 19:36:50.535024"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Suscipit velit est voluptas voluptatem perspiciatis aspernatur."], ["user_id", 13], ["created_at", "2017-09-13 19:36:50.537267"], ["updated_at", "2017-09-13 19:36:50.537267"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Alias ab sed illo quisquam nihil sit veritatis ut."], ["user_id", 7], ["created_at", "2017-09-13 19:36:50.539659"], ["updated_at", "2017-09-13 19:36:50.539659"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Consectetur numquam magni id commodi."], ["user_id", 2], ["created_at", "2017-09-13 19:36:50.542162"], ["updated_at", "2017-09-13 19:36:50.542162"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Ipsam aliquid sunt et architecto quia enim."], ["user_id", 4], ["created_at", "2017-09-13 19:36:50.544659"], ["updated_at", "2017-09-13 19:36:50.544659"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Distinctio corporis qui mollitia."], ["user_id", 14], ["created_at", "2017-09-13 19:36:50.548017"], ["updated_at", "2017-09-13 19:36:50.548017"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Ullam est sit cumque consectetur rerum exercitationem aliquid."], ["user_id", 3], ["created_at", "2017-09-13 19:36:50.550542"], ["updated_at", "2017-09-13 19:36:50.550542"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Consequatur et ex et voluptatibus rem."], ["user_id", 1], ["created_at", "2017-09-13 19:36:50.553013"], ["updated_at", "2017-09-13 19:36:50.553013"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Occaecati amet quo consequatur iure dicta."], ["user_id", 16], ["created_at", "2017-09-13 19:36:50.555403"], ["updated_at", "2017-09-13 19:36:50.555403"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Excepturi illum rem iste voluptas tenetur."], ["user_id", 9], ["created_at", "2017-09-13 19:36:50.557860"], ["updated_at", "2017-09-13 19:36:50.557860"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Totam omnis ut ut voluptas voluptas."], ["user_id", 8], ["created_at", "2017-09-13 19:36:50.560287"], ["updated_at", "2017-09-13 19:36:50.560287"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Quam explicabo et alias voluptas ut similique magni iure."], ["user_id", 5], ["created_at", "2017-09-13 19:36:50.562730"], ["updated_at", "2017-09-13 19:36:50.562730"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Laboriosam saepe aspernatur impedit et maxime occaecati aut."], ["user_id", 5], ["created_at", "2017-09-13 19:36:50.565537"], ["updated_at", "2017-09-13 19:36:50.565537"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ad minima doloribus sit nemo omnis in."], ["user_id", 11], ["created_at", "2017-09-13 19:36:50.567884"], ["updated_at", "2017-09-13 19:36:50.567884"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Eveniet sit molestiae aut."], ["user_id", 15], ["created_at", "2017-09-13 19:36:50.570300"], ["updated_at", "2017-09-13 19:36:50.570300"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Necessitatibus cupiditate et nihil error ut."], ["user_id", 14], ["created_at", "2017-09-13 19:36:50.572617"], ["updated_at", "2017-09-13 19:36:50.572617"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Ducimus blanditiis consequuntur quibusdam non nam."], ["user_id", 6], ["created_at", "2017-09-13 19:36:50.575339"], ["updated_at", "2017-09-13 19:36:50.575339"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Molestiae porro qui ea officiis neque eum."], ["user_id", 1], ["created_at", "2017-09-13 19:36:50.577846"], ["updated_at", "2017-09-13 19:36:50.577846"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Dolor doloremque inventore corrupti veritatis."], ["user_id", 14], ["created_at", "2017-09-13 19:36:50.580341"], ["updated_at", "2017-09-13 19:36:50.580341"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Iure omnis est dignissimos voluptatum et eaque."], ["user_id", 8], ["created_at", "2017-09-13 19:36:50.582666"], ["updated_at", "2017-09-13 19:36:50.582666"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Placeat blanditiis natus sunt ut consequuntur."], ["user_id", 10], ["created_at", "2017-09-13 19:36:50.585435"], ["updated_at", "2017-09-13 19:36:50.585435"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Eos qui non aut atque quibusdam dolor vel."], ["user_id", 9], ["created_at", "2017-09-13 19:36:50.588293"], ["updated_at", "2017-09-13 19:36:50.588293"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Nam blanditiis tenetur esse distinctio nostrum et saepe atque."], ["user_id", 7], ["created_at", "2017-09-13 19:36:50.590804"], ["updated_at", "2017-09-13 19:36:50.590804"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Magni voluptatibus quia tempore quis."], ["user_id", 3], ["created_at", "2017-09-13 19:36:50.593205"], ["updated_at", "2017-09-13 19:36:50.593205"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Sit suscipit et et."], ["user_id", 7], ["created_at", "2017-09-13 19:36:50.596065"], ["updated_at", "2017-09-13 19:36:50.596065"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Quaerat molestiae ad quasi mollitia illo quo."], ["user_id", 16], ["created_at", "2017-09-13 19:36:50.598965"], ["updated_at", "2017-09-13 19:36:50.598965"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Voluptatibus veritatis officiis quia aut."], ["user_id", 16], ["created_at", "2017-09-13 19:36:50.601533"], ["updated_at", "2017-09-13 19:36:50.601533"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Et minima blanditiis unde."], ["user_id", 7], ["created_at", "2017-09-13 19:36:50.604009"], ["updated_at", "2017-09-13 19:36:50.604009"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "items"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users"
+
+
+Started GET "/" for ::1 at 2017-09-13 22:53:44 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered home/index.html.erb within layouts/application (30.3ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    1: 
+    2: <h1>Welcome <%= current_user.email %></h1>
+    3: 
+    4: 
+    5: <%= link_to "View To Do List", items_path, class: 'btn btn-success' %>
+  app/views/home/index.html.erb:2:in `_app_views_home_index_html_erb___2575923157788671754_70248547230800'
+
+
+  Rendered /Users/saraesrig/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/saraesrig/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/saraesrig/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/saraesrig/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (49.3ms)
+  Rendered /Users/saraesrig/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/saraesrig/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/saraesrig/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/saraesrig/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/saraesrig/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (544.0ms)
+  Rendered /Users/saraesrig/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/saraesrig/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/saraesrig/.rvm/gems/ruby-2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (595.7ms)
