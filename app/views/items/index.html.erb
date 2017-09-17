@@ -10,7 +10,11 @@
             </h4>
           </div>
         </div>
+        <div id="delete">
+          <%= link_to "Delete Item", item, method: :delete, class: 'glyphicon glyphicon-ok' %>
+        </div>
       <% end %>
+
     </div>
     <div class="col-md-4">
       <%= link_to "New Item", new_item_path, class: 'btn btn-success' %>

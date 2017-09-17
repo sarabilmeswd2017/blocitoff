@@ -15,3 +15,23 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+// function loadDoc() {
+//   var xhttp = new XMLHttpRequest();
+//   xhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//      document.getElementById("delete").innerHTML = this.responseText;
+//     }
+//   };
+//   xhttp.open("GET", "ajax_info.txt", true);
+//   xhttp.send();
+// }
+
+$(function(){
+  $("#delete").submit(function(event){
+    event.preventDefault();
+
+    // this debugger should be hit when you click the submit button!
+    debugger;
+  });
+});
