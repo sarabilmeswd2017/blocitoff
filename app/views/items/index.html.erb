@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-6">
       <% @items.each do |item| %>
-        <div class="media">
+        <div class="media" id="item_<%= item.id %>">
           <div class="media-body">
             <h4 class="media-heading">
               <p><%= item.name %></p>

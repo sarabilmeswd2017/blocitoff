@@ -3,7 +3,7 @@ include ActionView::Helpers::DateHelper
 class ItemsController < ApplicationController
 
   respond_to :html, :js
-  
+
   def index
     @items = current_user.items
   end
@@ -27,8 +27,11 @@ class ItemsController < ApplicationController
   def destroy
     @item = Item.find(params[:id])
     if @item.destroy
+      respond_to do |format|
+        format.js
+      end
       flash[:notice] = "\"#{@item.name}\" was destroyed."
-      redirect_to @item
+      
     else
       flash[:alert] = "There was an error deleting your item."
       render :show
