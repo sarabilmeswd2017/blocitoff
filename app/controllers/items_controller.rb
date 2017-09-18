@@ -1,3 +1,5 @@
+require 'action_view'
+include ActionView::Helpers::DateHelper
 class ItemsController < ApplicationController
   def index
     @items = current_user.items
@@ -16,7 +18,7 @@ class ItemsController < ApplicationController
       flash[:alert] = "There was an error saving your item."
         render :new
     end
-
+    #distance_of_time_in_words(@item.created_at, Time.now)
   end
 
   def destroy

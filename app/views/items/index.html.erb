@@ -7,6 +7,9 @@
           <div class="media-body">
             <h4 class="media-heading">
               <p><%= item.name %></p>
+                <small>
+                  <%= distance_of_time_in_words(Time.now, item.created_at + 7.days) %>
+                </small
             </h4>
           </div>
         </div>
